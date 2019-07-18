@@ -2,7 +2,7 @@
 #this is a simple CI script
 
 GIT_REPO_URI=https://github.com/zivkashtan/course.git
-LOCAL_DIR="/home/student/Desktop/pro/exs_2/course/"
+LOCAL_DIR="/home/student/Desktop/pro/exs_2/exs_2/course/"
 MVN_ACTION="package"
 ARTIFACT_GROUP_ID="clinic.programming.time-tracker"
 ARTIFACT_ID="time-tracker-parent"
@@ -28,13 +28,7 @@ function build(){
 }
 
 function artifactPublishing(){  
-  mvn deploy:deploy-file \
-  DgroupId=clinic.programming.time-tracker \
-  DartifactId=time-tracker-parent \
-  Dversion=0.3.1 \
-  Dpackaging=pom \
-  Dfile=output/timetracker.war \
-  Durl=https://localhost:8081/repository/maven-snapshots/
+
   echo "artifactPublishing"
 }
 
